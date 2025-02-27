@@ -1,0 +1,31 @@
+:root {
+  --content-width: 1600px;
+  --container-offset: 20px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  --c-primary: #db8680;
+  --c-secondary: #fe9992;
+  --c-dark: #444444;
+  --c-gray: #848484;
+  --c-gray-light: #dddddd;
+  --c-beige: #efece6;
+  --c-blue: #dde4eb;
+  --c-green: #ecf6f2;
+  --c-pink: #ede7ee;
+
+  @media (max-width: 1399px) {
+    --content-width: 1120px !important;
+  }
+
+  @media (max-width: 1199px) {
+    --content-width: 940px !important;
+  }
+
+  @media (max-width: 991px) {
+    --content-width: 700px !important;
+  }
+
+  @media (max-width: 768px) {
+    --content-width: 520px !important;
+  }
+}
