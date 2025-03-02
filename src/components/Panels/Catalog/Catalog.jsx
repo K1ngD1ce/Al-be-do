@@ -1,32 +1,40 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useState, useEffect } from "react";
+import ProductCard from "../../Elements/productCard/ProductCard";
 
 export default function Catalog() {
-  const [currentTab, setCurrentTab] = useState();
+  const [currentTab, setCurrentTab] = useState(null);
   const [loading, setLoading] = useState(true);
   const [tabs, setTabs] = useState([]);
 
   const handleTabClick = (e) => {
-    setCurrentTab(e.target.id);
+    setCurrentTab(Number(e.target.id));
   };
 
   useEffect(() => {
-    fetch("https://66cf3bae901aab248421750a.mockapi.io/items") // Запрос к MockAPI
-      .then((response) => response.json()) // Преобразуем ответ в JSON
+    fetch("https://66cf3bae901aab248421750a.mockapi.io/items")
+      .then((response) => response.json())
       .then((data) => {
+        // Извлекаем табы и их товары
         const formattedTabs =
-          // Проверяем, что API вернул массив, и берём из него `tabs`
           Array.isArray(data) && data.length > 0 ? data[0].tabs : [];
         setTabs(formattedTabs);
+
+        // Устанавливаем первый таб активным
+        if (formattedTabs.length > 0) {
+          setCurrentTab(formattedTabs[0].id);
+        }
         setLoading(false);
       })
-
       .catch((error) => {
         console.error("Ошибка загрузки данных", error);
         setLoading(false);
       });
   }, []);
+
+  // Находим текущую активную категорию
+  const activeTab = tabs.find((tab) => tab.id === currentTab);
 
   return (
     <section className="catalog">
@@ -34,43 +42,40 @@ export default function Catalog() {
         <h3 className="section__title catalog__title">Каталог</h3>
         <div className="catalog__wrapper">
           <div className="catalog__tabs">
-            {tabs.map((tab, i) => (
+            {/* Отображаем кнопки табов */}
+            {tabs.map((tab) => (
               <button
                 className="tab__btn"
-                key={i}
+                key={tab.id}
                 id={tab.id}
-                disabled={currentTab === `${tab.id}`}
+                disabled={currentTab === tab.id}
                 onClick={handleTabClick}
               >
-                {tab.tabTitle}
+                {tab.category} {/* Заголовок категории */}
               </button>
             ))}
           </div>
 
           <div className="content">
-            {tabs.map(
-              (tab) =>
-                currentTab === tab.id && ( // Показываем только активный таб
-                  <Swiper
-                    key={tab.id}
-                    spaceBetween={20} // Отступ между слайдами
-                    slidesPerView={1} // Количество отображаемых слайдов
-                    navigation // Включаем навигацию
-                    modules={[Navigation]}
-                  >
-                    {/* Создаём несколько слайдов для каждого таба */}
-                    {[...Array(5)].map((_, index) => (
-                      <SwiperSlide key={index}>
-                        <div className="contentCard">
-                          <p>
-                            {tab.title} - Слайд {index + 1}
-                          </p>
-                          <p>{tab.content}</p>
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                )
+            {activeTab ? (
+              activeTab.products && activeTab.products.length > 0 ? (
+                <Swiper
+                  spaceBetween={32}
+                  slidesPerView={3} // Можно изменить количество отображаемых слайдов
+                  navigation
+                  modules={[Navigation]}
+                >
+                  {activeTab.products.map((product) => (
+                    <SwiperSlide key={product.id}>
+                      <ProductCard product={product} />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              ) : (
+                <p className="empty-message">Этих товаров еще нет :(</p>
+              )
+            ) : (
+              <p>Загрузка...</p>
             )}
           </div>
         </div>

@@ -52,12 +52,30 @@
   width: 100%;
 }
 
-.productCards__btn,
+.productCardsInfo__btn,
 .intro__btn {
   width: 100%;
   max-width: 250px;
   height: 70px;
   color: white;
+}
+
+.productCard__btn {
+  width: 100%;
+  max-width: 200px;
+  height: 63px;
+  color: var(--c-primary);
+  background-color: white;
+
+  &:hover:after {
+    background-color: var(--c-primary);
+    transition-delay: 0.35s;
+  }
+
+  &:hover {
+    color: white;
+    transition-delay: 0.5s;
+  }
 }
 
 .tab__btn {

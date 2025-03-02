@@ -1,13 +1,13 @@
-.productCards {
+.productCardsInfo {
   padding-top: 16px;
   padding-bottom: 70px;
 
-  .productCards__container {
+  .productCardsInfo__container {
     display: flex;
     gap: 32px;
   }
 
-  .productCards__card {
+  .productCardsInfo__card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -29,13 +29,13 @@
     }
   }
 
-  .productCards__card-name {
+  .productCardsInfo__card-name {
     font-size: 50px;
     color: var(--c-dark);
     margin-bottom: 12px;
   }
 
-  .productCards__card-descr {
+  .productCardsInfo__card-descr {
     font-size: 20px;
     color: var(--c-dark);
     line-height: 120%;
@@ -46,7 +46,7 @@
     }
   }
 
-  .productCards__card-img {
+  .productCardsInfo__card-img {
     display: flex;
     justify-content: space-between;
   }
