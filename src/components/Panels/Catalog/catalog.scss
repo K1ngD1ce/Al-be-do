@@ -1,0 +1,21 @@
+.catalog {
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  .catalog__title {
+    margin-bottom: 16px;
+  }
+
+  .catalog__tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .catalog__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}

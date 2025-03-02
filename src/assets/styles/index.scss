@@ -1,13 +1,14 @@
 // elements
-@import "/src/components/Elements/Header/header.scss";
+@import "/src/components/Elements/Header/header";
 
 // panels
 
-@import "/src/components/Panels/Intro/intro.scss";
-@import "/src/components/Panels/ProductCards/productCards.scss";
+@import "/src/components/Panels/Intro/intro";
+@import "/src/components/Panels/ProductCards/productCards";
+@import "/src/components/Panels/Catalog/catalog";
 
 // utils
 
-@import "./utils/vars.scss";
-@import "./utils/fonts.scss";
-@import "./utils/button.scss";
+@import "./utils/vars";
+@import "./utils/fonts";
+@import "./utils/button";

@@ -59,3 +59,35 @@
   height: 70px;
   color: white;
 }
+
+.tab__btn {
+  position: relative;
+  font-size: 20px;
+  color: var(--c-dark);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--c-primary);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &:disabled {
+    padding-left: 20px;
+    font-weight: 700;
+    color: var(--c-primary);
+  }
+
+  &:disabled::before {
+    opacity: 1;
+  }
+}
