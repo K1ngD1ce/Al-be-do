@@ -1,12 +1,40 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import ProductCard from "../../Elements/productCard/ProductCard";
+import Arrow from "../../../assets/image/svg/arrow-slide.svg?react";
 
 export default function Catalog() {
   const [currentTab, setCurrentTab] = useState(null);
   const [loading, setLoading] = useState(true);
   const [tabs, setTabs] = useState([]);
+  const sliderRef = useRef(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const activeTab = tabs.find((tab) => tab.id === currentTab);
+
+  useEffect(() => {
+    if (sliderRef.current && sliderRef.current.swiper) {
+      const swiperInstance = sliderRef.current.swiper;
+      setTotalPages(Math.ceil(activeTab.products.length / 3));
+    }
+  }, [activeTab]);
+
+  const handleSlideChange = () => {
+    if (sliderRef.current && sliderRef.current.swiper) {
+      const swiperInstance = sliderRef.current.swiper;
+      setCurrentPage(Math.ceil(swiperInstance.activeIndex / 3) + 1);
+    }
+  };
+
+  const handlePrev = useCallback(() => {
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slidePrev();
+  }, []);
+
+  const handleNext = useCallback(() => {
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slideNext();
+  }, []);
 
   const handleTabClick = (e) => {
     setCurrentTab(Number(e.target.id));
@@ -34,7 +62,6 @@ export default function Catalog() {
   }, []);
 
   // Находим текущую активную категорию
-  const activeTab = tabs.find((tab) => tab.id === currentTab);
 
   return (
     <section className="catalog">
@@ -56,23 +83,39 @@ export default function Catalog() {
             ))}
           </div>
 
-          <div className="content">
+          <div className="catalog__products">
             {activeTab ? (
               activeTab.products && activeTab.products.length > 0 ? (
-                <Swiper
-                  spaceBetween={32}
-                  slidesPerView={3} // Можно изменить количество отображаемых слайдов
-                  navigation
-                  modules={[Navigation]}
-                >
-                  {activeTab.products.map((product) => (
-                    <SwiperSlide key={product.id}>
-                      <ProductCard product={product} />
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
+                <>
+                  <Swiper
+                    ref={sliderRef}
+                    spaceBetween={32}
+                    slidesPerView={3}
+                    slidesPerGroup={3}
+                    onSlideChange={handleSlideChange}
+                  >
+                    {activeTab.products.map((product) => (
+                      <SwiperSlide key={product.id}>
+                        <ProductCard product={product} />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                  <div className="swiper__controller-wrapper">
+                    <div className="prev-arrow" onClick={handlePrev}>
+                      <Arrow width="12" height="12" />
+                    </div>
+
+                    <span>
+                      {currentPage} из {totalPages}
+                    </span>
+
+                    <div className="next-arrow" onClick={handleNext}>
+                      <Arrow width="12" height="12" />
+                    </div>
+                  </div>
+                </>
               ) : (
-                <p className="empty-message">Этих товаров еще нет :(</p>
+                <div className="empty-message">Этих товаров еще нет :(</div>
               )
             ) : (
               <p>Загрузка...</p>
