@@ -2,6 +2,7 @@ import Header from "./components/Elements/Header/Header";
 import Intro from "./components/Panels/Intro/Intro";
 import ProductCardsInfo from "./components/Panels/ProductCardsInfo/ProductCardsInfo";
 import Catalog from "./components/Panels/Catalog/Catalog";
+import Shops from "./components/Panels/Shops/Shops";
 import Logo from "./assets/image/svg/logo.svg?react";
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
         <Intro />
         <ProductCardsInfo />
         <Catalog />
+        <Shops />
       </main>
     </>
   );
