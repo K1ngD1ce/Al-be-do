@@ -1,0 +1,32 @@
+[
+  {
+    "city": "Москва",
+    "title": "Albedo на «Белой площади»",
+    "coordinates": [55.778461, 37.586068],
+    "description": "вход напротив кафе Starbucks",
+    "address": "м. Белорусская, Бутырский Вал, 10",
+    "phone": "Телефон: +7 (495) 554-32-32",
+    "email": "albebo_msk@gmail.com",
+    "image": "src/assets/image/shopsMoscow.jpg"
+  },
+  {
+    "city": "Санкт-Петербург",
+    "title": "Albedo в «Новой Голандии»",
+    "coordinates": [59.92996943586071, 30.291770940001307],
+    "description": "вход рядом с Альфа-Банк",
+    "address": "набережная Адмиралтейского канала, 2И",
+    "phone": "Телефон: +7 (495) 555-32-42",
+    "email": "albebo_spb@gmail.com",
+    "image": "src/assets/image/shopSpb.jpg"
+  },
+  {
+    "city": "Новосибирск",
+    "title": "Albedo в Новосибирске",
+    "coordinates": [55.02157056967168, 82.91724949999995],
+    "description": "5 этаж",
+    "address": "Советская улица, 5",
+    "phone": "Телефон: +7 (495) 556-32-52",
+    "email": "albebo_nsk@gmail.com",
+    "image": "src/assets/image/shopNovosibirsk.jpg"
+  }
+]

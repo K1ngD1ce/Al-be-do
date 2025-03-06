@@ -1,19 +1,18 @@
 import { useState } from "react";
 import Arrow from "../../../assets/image/svg/arrow-select.svg?react";
 
-export default function Select({ options }) {
-  const [selected, setSelected] = useState(options[0]);
+export default function Select({ options, selectedCity, onChange }) {
   const [open, setOpen] = useState(false);
 
   const handleSelect = (option) => {
-    setSelected(option);
+    onChange(option); // Передаем изменение города в родительский компонент
     setOpen(false);
   };
 
   return (
     <div className={`custom__select-wrapper ${open ? "open" : ""}`}>
       <div className="custom__select" onClick={() => setOpen(!open)}>
-        {selected}
+        {selectedCity}
       </div>
       <ul className="custom__select-dropdown list-reset">
         {options.map((option, index) => (

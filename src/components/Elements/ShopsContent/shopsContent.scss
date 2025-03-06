@@ -1,0 +1,59 @@
+.shops__content-wrapper {
+  display: flex;
+  width: 100%;
+  height: 600px;
+
+  .img__wrapper {
+    max-width: 800px;
+    height: 600px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .info__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    max-width: 800px;
+    padding: 32px;
+    background-color: var(--c-beige);
+  }
+
+  .info__wrapper-text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .shops__info-descr,
+  .shops__info-address {
+    font-size: 20px;
+  }
+  .shops__info-descr {
+    color: var(--c-gray-dark);
+  }
+
+  .info__wrapper-map {
+    width: 100%;
+    height: 233px;
+    overflow: hidden;
+  }
+
+  .info__wrapper-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 20px;
+    }
+  }
+}
