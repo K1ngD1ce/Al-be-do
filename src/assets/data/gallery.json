@@ -1,0 +1,196 @@
+{
+  "tabsGallery": [
+    {
+      "id": 1,
+      "category": "Фасад",
+      "images": [
+        {
+          "id": 1,
+          "name": "Фасад 1",
+          "img": "src/assets/image/gallery/facade/1.jpg",
+          "type": "big"
+        },
+        {
+          "id": 2,
+          "name": "Фасад 2",
+          "img": "src/assets/image/gallery/facade/2.jpg",
+          "type": "small"
+        },
+        {
+          "id": 3,
+          "name": "Фасад 3",
+          "img": "src/assets/image/gallery/facade/3.jpg",
+          "type": "small"
+        },
+        {
+          "id": 4,
+          "name": "Фасад 4",
+          "img": "src/assets/image/gallery/facade/4.jpg",
+          "type": "small"
+        },
+        {
+          "id": 5,
+          "name": "Фасад 5",
+          "img": "src/assets/image/gallery/facade/5.jpg",
+          "type": "small"
+        },
+        {
+          "id": 6,
+          "name": "Фасад 6",
+          "img": "src/assets/image/gallery/facade/6.jpg",
+          "type": "big"
+        },
+        {
+          "id": 7,
+          "name": "Фасад 7",
+          "img": "src/assets/image/gallery/facade/7.jpg",
+          "type": "small"
+        },
+        {
+          "id": 8,
+          "name": "Фасад 8",
+          "img": "src/assets/image/gallery/facade/8.jpg",
+          "type": "small"
+        },
+        {
+          "id": 9,
+          "name": "Фасад 9",
+          "img": "src/assets/image/gallery/facade/9.jpg",
+          "type": "small"
+        },
+        {
+          "id": 10,
+          "name": "Фасад 10",
+          "img": "src/assets/image/gallery/facade/10.jpg",
+          "type": "small"
+        },
+        {
+          "id": 11,
+          "name": "Фасад 11",
+          "img": "src/assets/image/gallery/facade/5.jpg",
+          "type": "big"
+        },
+        {
+          "id": 12,
+          "name": "Фасад 12",
+          "img": "src/assets/image/gallery/facade/6.jpg",
+          "type": "small"
+        },
+        {
+          "id": 13,
+          "name": "Фасад 13",
+          "img": "src/assets/image/gallery/facade/7.jpg",
+          "type": "small"
+        },
+        {
+          "id": 14,
+          "name": "Фасад 14",
+          "img": "src/assets/image/gallery/facade/8.jpg",
+          "type": "small"
+        },
+        {
+          "id": 15,
+          "name": "Фасад 15",
+          "img": "src/assets/image/gallery/facade/9.jpg",
+          "type": "small"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "category": "Интерьер",
+      "images": [
+        {
+          "id": 16,
+          "name": "Интерьер 1",
+          "img": "src/assets/image/gallery/interior/1.jpg",
+          "type": "big"
+        },
+        {
+          "id": 17,
+          "name": "Интерьер 2",
+          "img": "src/assets/image/gallery/interior/2.jpg",
+          "type": "small"
+        },
+        {
+          "id": 18,
+          "name": "Интерьер 3",
+          "img": "src/assets/image/gallery/interior/3.jpg",
+          "type": "small"
+        },
+        {
+          "id": 19,
+          "name": "Интерьер 4",
+          "img": "src/assets/image/gallery/interior/4.jpg",
+          "type": "small"
+        },
+        {
+          "id": 20,
+          "name": "Интерьер 5",
+          "img": "src/assets/image/gallery/interior/5.jpg",
+          "type": "small"
+        },
+        {
+          "id": 21,
+          "name": "Интерьер 6",
+          "img": "src/assets/image/gallery/interior/6.jpg",
+          "type": "big"
+        },
+        {
+          "id": 22,
+          "name": "Интерьер 7",
+          "img": "src/assets/image/gallery/interior/7.jpg",
+          "type": "small"
+        },
+        {
+          "id": 24,
+          "name": "Интерьер 8",
+          "img": "src/assets/image/gallery/interior/8.jpg",
+          "type": "small"
+        },
+        {
+          "id": 25,
+          "name": "Интерьер 9",
+          "img": "src/assets/image/gallery/interior/9.jpg",
+          "type": "small"
+        },
+        {
+          "id": 20,
+          "name": "Интерьер 10",
+          "img": "src/assets/image/gallery/interior/10.jpg",
+          "type": "small"
+        },
+        {
+          "id": 21,
+          "name": "Интерьер 11",
+          "img": "src/assets/image/gallery/interior/11.jpg",
+          "type": "big"
+        },
+        {
+          "id": 22,
+          "name": "Интерьер 12",
+          "img": "src/assets/image/gallery/interior/12.jpg",
+          "type": "small"
+        },
+        {
+          "id": 24,
+          "name": "Интерьер 13",
+          "img": "src/assets/image/gallery/interior/13.jpg",
+          "type": "small"
+        },
+        {
+          "id": 25,
+          "name": "Интерьер 14",
+          "img": "src/assets/image/gallery/interior/14.jpg",
+          "type": "small"
+        },
+        {
+          "id": 26,
+          "name": "Интерьер 15",
+          "img": "src/assets/image/gallery/interior/15.jpg",
+          "type": "small"
+        }
+      ]
+    }
+  ]
+}

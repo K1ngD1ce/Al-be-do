@@ -1,0 +1,33 @@
+.gallerycards__wrapper {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+
+  .bigCard__img {
+    width: 512px;
+    height: 750px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .smallCards__group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .smallCards__img {
+    width: 512px;
+    height: 359px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

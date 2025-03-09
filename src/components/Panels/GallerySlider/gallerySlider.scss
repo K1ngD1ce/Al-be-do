@@ -1,0 +1,35 @@
+.gallerySlider {
+  padding: 70px 0;
+  .gallerySlider__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  .gallerySlider__tabs-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+
+    .tabs {
+      display: flex;
+      gap: 32px;
+    }
+  }
+
+  .gallerySlider__images {
+    display: flex;
+    flex-direction: column-reverse;
+
+    .swiper {
+      width: 100%;
+    }
+
+    .swiper__controller-wrapper {
+      position: absolute;
+      top: 0;
+      right: 20px;
+    }
+  }
+}
