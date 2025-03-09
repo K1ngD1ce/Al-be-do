@@ -8,12 +8,12 @@
   &.open {
     .custom__select-dropdown {
       display: block;
+      user-select: none;
+      -webkit-user-select: none;
     }
 
     .custom__select-arrow {
-      top: 50%;
-      right: 23px;
-      transform: translateY(-50%) rotate(180deg);
+      transform: rotate(180deg);
     }
   }
 
@@ -30,6 +30,8 @@
     color: #333;
     outline: none;
     box-shadow: none;
+    user-select: none;
+    -webkit-user-select: none;
     cursor: pointer;
   }
 
@@ -50,6 +52,8 @@
     font-size: 20px;
     color: #333;
     cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
     transition: background-color 0.3s ease-in-out;
 
     &:hover {
