@@ -71,6 +71,7 @@ export default function GallerySlider() {
             <Swiper
               ref={sliderRef}
               onSlideChange={(swiper) => setCurrentPage(swiper.realIndex + 1)}
+              spaceBetween={32}
             >
               {activeTab &&
                 activeTab.images.length > 0 &&
