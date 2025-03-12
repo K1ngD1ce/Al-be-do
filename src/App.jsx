@@ -5,6 +5,7 @@ import ProductCardsInfo from "./components/Panels/ProductCardsInfo/ProductCardsI
 import Catalog from "./components/Panels/Catalog/Catalog";
 import Shops from "./components/Panels/Shops/Shops";
 import GallerySlider from "./components/Panels/GallerySlider/GallerySlider";
+import Services from "./components/Panels/Services/Services";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Catalog />
         <Shops />
         <GallerySlider />
+        <Services />
       </main>
     </>
   );

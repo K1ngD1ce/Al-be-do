@@ -52,6 +52,7 @@
   width: 100%;
 }
 
+.accordion__tabs-btn,
 .productCardsInfo__btn,
 .intro__btn {
   width: 100%;
@@ -76,6 +77,10 @@
     color: white;
     transition-delay: 0.5s;
   }
+}
+
+.accordion__tabs-btn {
+  max-width: 313px;
 }
 
 .swiper__controller-wrapper {
