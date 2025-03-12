@@ -6,6 +6,8 @@ import Catalog from "./components/Panels/Catalog/Catalog";
 import Shops from "./components/Panels/Shops/Shops";
 import GallerySlider from "./components/Panels/GallerySlider/GallerySlider";
 import Services from "./components/Panels/Services/Services";
+import OurClients from "./components/Panels/OurClients/OurClients";
+import Vacancies from "./components/Panels/Vacancies/Vacancies";
 
 export default function App() {
   return (
@@ -18,6 +20,8 @@ export default function App() {
         <Shops />
         <GallerySlider />
         <Services />
+        <OurClients />
+        <Vacancies />
       </main>
     </>
   );

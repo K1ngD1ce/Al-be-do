@@ -8,18 +8,19 @@
 @import "/src/components/Elements/Map/map";
 @import "/src/components/Elements/Accordion/accordion";
 @import "/src/components/Elements/ServicesTabContent/servicesTabContent";
+@import "/src/components/Elements/VacanciesCard/vacanciesCard";
 
 // panels
-
 @import "/src/components/Panels/Intro/intro";
 @import "/src/components/Panels/ProductCardsInfo/productCardsInfo";
 @import "/src/components/Panels/Catalog/catalog";
 @import "/src/components/Panels/Shops/shops";
 @import "/src/components/Panels/GallerySlider/gallerySlider";
 @import "/src/components/Panels/Services/services";
+@import "/src/components/Panels/OurClients/ourClients";
+@import "/src/components/Panels/Vacancies/vacancies";
 
 // utils
-
 @import "./utils/vars";
 @import "./utils/fonts";
 @import "./utils/button";

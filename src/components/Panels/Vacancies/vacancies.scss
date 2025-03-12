@@ -1,0 +1,29 @@
+.vacancies {
+  padding: 70px 0;
+
+  .vacancies__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .vacancies__text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 507px;
+  }
+
+  .vacancies__descr {
+    font-size: 30px;
+    line-height: 167%;
+    color: var(--c-gray-dark);
+  }
+
+  .vacancies__cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}

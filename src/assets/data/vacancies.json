@@ -1,0 +1,32 @@
+{
+  "vacancies": [
+    {
+      "id": 1,
+      "jobTitle": "Скульптор",
+      "description": "Значимость этих проблем настолько очевидна, что курс на ориентированный национальный проект предоставляет.",
+      "img": "src/assets/image/vacancies/sculptor.jpg",
+      "colorCard": "pink"
+    },
+    {
+      "id": 2,
+      "jobTitle": "Менеджер",
+      "description": "Значимость этих проблем настолько очевидна, что курс на ориентированный национальный проект предоставляет.",
+      "img": "src/assets/image/vacancies/manager.jpg",
+      "colorCard": "green"
+    },
+    {
+      "id": 3,
+      "jobTitle": "Технолог",
+      "description": "Значимость этих проблем настолько очевидна, что курс на ориентированный национальный проект предоставляет.",
+      "img": "src/assets/image/vacancies/technologist.jpg",
+      "colorCard": "beige"
+    },
+    {
+      "id": 4,
+      "jobTitle": "Художник",
+      "description": "Значимость этих проблем настолько очевидна, что курс на ориентированный национальный проект предоставляет.",
+      "img": "src/assets/image/vacancies/artist.jpg",
+      "colorCard": "blue"
+    }
+  ]
+}
