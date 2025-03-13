@@ -23,7 +23,7 @@ export default function Shops() {
   };
 
   return (
-    <section className="shops">
+    <section id="shops" className="shops">
       <div className="container">
         <div className="shops__upper">
           <h3 className="section__title">Магазины</h3>

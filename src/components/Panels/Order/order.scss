@@ -1,0 +1,193 @@
+.order {
+  padding-top: 60px;
+  padding-bottom: 64px;
+
+  .section__title {
+    margin-bottom: 64px;
+  }
+
+  .order__wrapper {
+    display: flex;
+    width: 100%;
+    max-height: 564px;
+  }
+
+  .form__wrapper {
+    width: 100%;
+    max-width: 608px;
+    padding: 64px;
+    border: 1px solid var(--c-gray-light);
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    .input__group {
+      position: relative;
+
+      .input__order {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid var(--c-gray);
+        height: 50px;
+        padding-bottom: 19px;
+        font-size: 20px;
+        color: var(--c-gray);
+        background: transparent;
+        outline: none;
+
+        &:hover + label,
+        &:focus + label,
+        &:valid + label {
+          top: -10px;
+          font-size: 18px;
+        }
+      }
+
+      label {
+        position: absolute;
+        left: 0;
+        top: 19px;
+        display: flex;
+        align-items: center;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: var(--c-gray);
+        transition: all 0.3s ease;
+        pointer-events: none;
+
+        span {
+          color: var(--c-primary);
+          font-size: 20px;
+        }
+      }
+    }
+
+    .btns__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .checkbox {
+      display: none;
+    }
+
+    .checkbox__descr {
+      display: flex;
+      gap: 3px;
+      font-size: 14px;
+      width: 100%;
+      a {
+        font-size: 14px;
+        color: var(--c-primary);
+        text-decoration: underline;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+          color: var(--c-secondary);
+        }
+      }
+    }
+
+    .checkbox__label {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    /* Стили для кастомного чекбокса */
+    .checkbox__item {
+      position: relative;
+      display: inline-block;
+      min-width: 14px;
+      height: 14px;
+      border: 1px solid var(--c-primary); /* Граница для чекбокса */
+      transition: background-color 0.3s, border-color 0.3s; /* Плавный переход */
+      cursor: pointer;
+    }
+
+    /* Когда чекбокс активен, показываем галочку */
+    .checkbox:checked + .checkbox__item svg {
+      display: block;
+    }
+
+    /* Скрываем галочку по умолчанию */
+    .checkbox__item svg {
+      display: none;
+      position: absolute;
+      width: 10px;
+      height: 7px;
+      top: 2px;
+      left: 1px;
+    }
+
+    /* Добавляем эффекты на чекбокс */
+    .checkbox__item:hover {
+      border-color: var(--c-secondary);
+    }
+
+    .media__list {
+      display: flex;
+      gap: 20.5px;
+    }
+
+    .media__list-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      transition: all 0.3s ease-in-out;
+
+      &.telegram__link {
+        border: 1px solid #2aabee;
+        background-color: #2aabee;
+
+        svg {
+          width: 21.72px;
+          height: 18px;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+          background-color: white;
+        }
+
+        &:hover svg {
+          path {
+            fill: #2aabee;
+          }
+        }
+      }
+      &.whatsapp__link {
+        background-color: #30bf39;
+        border: 1px solid #30bf39;
+
+        svg {
+          width: 21.56px;
+          height: 21.69px;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+          background-color: white;
+        }
+
+        &:hover svg {
+          path {
+            fill: #30bf39;
+          }
+        }
+      }
+    }
+  }
+
+  .image__wrapper {
+    padding: 31px 32px;
+    background-color: var(--c-beige);
+  }
+}

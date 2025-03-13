@@ -56,7 +56,7 @@ export default function Catalog() {
   }, [activeTab]);
 
   return (
-    <section className="catalog">
+    <section id="catalog" className="catalog">
       <div className="container">
         <div className="catalog__wrapper">
           <div className="catalog__tabs">

@@ -10,7 +10,7 @@ export default function Vacancies() {
   }, []);
 
   return (
-    <section className="vacancies">
+    <section id="vacancies" className="vacancies">
       <div className="container vacancies__container">
         <div className="vacancies__text">
           <h6 className="section__title vacancies__title">Вакансии</h6>

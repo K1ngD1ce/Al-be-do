@@ -8,6 +8,7 @@ import GallerySlider from "./components/Panels/GallerySlider/GallerySlider";
 import Services from "./components/Panels/Services/Services";
 import OurClients from "./components/Panels/OurClients/OurClients";
 import Vacancies from "./components/Panels/Vacancies/Vacancies";
+import Order from "./components/Panels/Order/Order";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
         <Services />
         <OurClients />
         <Vacancies />
+        <Order />
       </main>
     </>
   );

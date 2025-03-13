@@ -12,32 +12,32 @@ export default function Header({ logo }) {
           </a>
           <ul className="nav">
             <li className="nav__items">
-              <a className="nav__items-link" href="#">
+              <a className="nav__items-link" href="#catalog">
                 Каталог
               </a>
             </li>
             <li className="nav__items">
-              <a className="nav__items-link" href="#">
+              <a className="nav__items-link" href="#shops">
                 Магазины
               </a>
             </li>
             <li className="nav__items">
-              <a className="nav__items-link" href="#">
+              <a className="nav__items-link" href="#gallerySlider">
                 Галерея
               </a>
             </li>
             <li className="nav__items">
-              <a className="nav__items-link" href="#">
+              <a className="nav__items-link" href="#services">
                 Услуги
               </a>
             </li>
             <li className="nav__items">
-              <a className="nav__items-link" href="#">
+              <a className="nav__items-link" href="#vacancies">
                 Вакансии
               </a>
             </li>
             <li className="nav__items">
-              <a className="nav__items-link" href="#">
+              <a className="nav__items-link" href="#order">
                 Заказать
               </a>
             </li>

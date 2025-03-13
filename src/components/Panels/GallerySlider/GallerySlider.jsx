@@ -55,7 +55,7 @@ export default function GallerySlider() {
   };
 
   return (
-    <section className="gallerySlider">
+    <section id="gallerySlider" className="gallerySlider">
       <div className="container gallerySlider__container">
         <div className="gallerySlider__tabs-wrapper">
           <h4 className="section__title">Галерея</h4>
