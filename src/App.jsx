@@ -9,6 +9,7 @@ import Services from "./components/Panels/Services/Services";
 import OurClients from "./components/Panels/OurClients/OurClients";
 import Vacancies from "./components/Panels/Vacancies/Vacancies";
 import Order from "./components/Panels/Order/Order";
+import Footer from "./components/Elements/Footer/Footer";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         <Vacancies />
         <Order />
       </main>
+      <Footer />
     </>
   );
 }
