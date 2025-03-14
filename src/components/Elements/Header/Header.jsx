@@ -1,43 +1,62 @@
 import Search from "../../../assets/image/svg/search.svg?react";
 import Cart from "../../../assets/image/svg/shopping-cart.svg?react";
 import Login from "../../../assets/image/svg/login.svg?react";
+import { Link } from "react-router-dom";
 
 export default function Header({ logo }) {
   return (
     <header className="header">
       <div className="container container__header">
         <div className="header__left">
-          <a href="/" className="header__logo">
+          <Link to="/" className="header__logo">
             {logo}
-          </a>
+          </Link>
           <ul className="nav">
             <li className="nav__items">
-              <a className="nav__items-link" href="#catalog">
+              <a
+                className="nav__items-link link__underline-centerSec"
+                href="#catalog"
+              >
                 Каталог
               </a>
             </li>
             <li className="nav__items">
-              <a className="nav__items-link" href="#shops">
+              <a
+                className="nav__items-link link__underline-centerSec"
+                href="#shops"
+              >
                 Магазины
               </a>
             </li>
             <li className="nav__items">
-              <a className="nav__items-link" href="#gallerySlider">
+              <a
+                className="nav__items-link link__underline-centerSec"
+                href="#gallerySlider"
+              >
                 Галерея
               </a>
             </li>
             <li className="nav__items">
-              <a className="nav__items-link" href="#services">
+              <a
+                className="nav__items-link link__underline-centerSec"
+                href="#services"
+              >
                 Услуги
               </a>
             </li>
             <li className="nav__items">
-              <a className="nav__items-link" href="#vacancies">
+              <a
+                className="nav__items-link link__underline-centerSec"
+                href="#vacancies"
+              >
                 Вакансии
               </a>
             </li>
             <li className="nav__items">
-              <a className="nav__items-link" href="#order">
+              <a
+                className="nav__items-link link__underline-centerSec"
+                href="#order"
+              >
                 Заказать
               </a>
             </li>

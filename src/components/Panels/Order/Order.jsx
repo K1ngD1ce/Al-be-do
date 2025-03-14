@@ -1,6 +1,7 @@
 import Check from "../../../assets/image/svg/check.svg?react";
 import Telegram from "../../../assets/image/svg/telegram.svg?react";
 import Whatsapp from "../../../assets/image/svg/whatsapp.svg?react";
+import { Link } from "react-router-dom";
 
 export default function Order() {
   return (
@@ -55,7 +56,8 @@ export default function Order() {
                     <Check width="10" height="7" />
                   </span>
                   <div className="checkbox__descr">
-                    Принимаю <a href="/"> пользовательское соглашение</a>
+                    Принимаю{" "}
+                    <Link to="/policy"> пользовательское соглашение</Link>
                   </div>
                 </label>
 

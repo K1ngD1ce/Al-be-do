@@ -126,3 +126,102 @@
     transform: rotate(180deg);
   }
 }
+
+.link__underline-right {
+  position: relative;
+  display: block;
+  padding: 4px 0;
+  transition: 0.5s;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--c-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+.link__underline-center {
+  position: relative;
+  display: inline-block;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    display: block;
+    width: 100%; /* Изначальная ширина линии — вся ширина ссылки */
+    height: 1px;
+    background-color: var(--c-gray); /* Цвет начальной линии (неактивный) */
+    transform: translateX(-50%); /* Чтобы линия начиналась с центра */
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    display: block;
+    width: 0; /* Начальная ширина линии 0 */
+    height: 1px;
+    background-color: var(--c-primary); /* Цвет линии при наведении */
+    transform: translateX(-50%); /* Чтобы линия начиналась с центра */
+    transition: width 0.3s ease, background-color 0.3s ease; /* Плавное изменение ширины и цвета */
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible:not(:hover) {
+    outline: 2px solid var(--c-primary);
+    outline-offset: 3px;
+  }
+
+  &:hover::after {
+    width: 100%; /* При наведении линия расширяется на всю ширину */
+  }
+}
+
+.link__underline-centerSec {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    display: block;
+    width: 0; /* Начальная ширина линии 0 */
+    height: 2px;
+    background-color: var(--c-primary); /* Цвет линии при наведении */
+    transform: translateX(-50%); /* Чтобы линия начиналась с центра */
+    transition: width 0.3s ease, background-color 0.3s ease; /* Плавное изменение ширины и цвета */
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible:not(:hover) {
+    outline: 2px solid var(--c-primary);
+    outline-offset: 3px;
+  }
+
+  &:hover::after {
+    width: 100%; /* При наведении линия расширяется на всю ширину */
+  }
+}
