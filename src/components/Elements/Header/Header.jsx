@@ -1,11 +1,23 @@
+import { useState, useEffect } from "react";
 import Search from "../../../assets/image/svg/search.svg?react";
 import Cart from "../../../assets/image/svg/shopping-cart.svg?react";
 import Login from "../../../assets/image/svg/login.svg?react";
 import { Link } from "react-router-dom";
 
 export default function Header({ logo }) {
+  const [scrolled, setScrolled] = useState();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50); // 50px — точка, после которой меняем класс
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="header">
+    <header className={`header ${scrolled ? "fixed" : ""}`}>
       <div className="container container__header">
         <div className="header__left">
           <Link to="/" className="header__logo">
