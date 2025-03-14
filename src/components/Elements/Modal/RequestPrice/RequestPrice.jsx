@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Pluse from "../../../../assets/image/svg/plus.svg?react";
+import Check from "../../../../assets/image/svg/check.svg?react";
 
 export default function RequestPrice({ closeModal }) {
   const modalRef = useRef(null);
@@ -125,7 +126,7 @@ export default function RequestPrice({ closeModal }) {
                 <label className="checkbox__label">
                   <input id="online" type="checkbox" className="checkbox" />
                   <span className="checkbox__item">
-                    {/* Ваш SVG или иконка */}
+                    <Check />
                   </span>
                   <div className="checkbox__descr">
                     Принимаю <a href="/policy"> пользовательское соглашение</a>
