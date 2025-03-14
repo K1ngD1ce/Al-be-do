@@ -1,4 +1,12 @@
+import { useState } from "react";
+import RequestPrice from "../../Elements/Modal/RequestPrice/RequestPrice";
+
 export default function ServicesTabContent({ img, title, text, isActive }) {
+  const [modal, setModal] = useState(false); // Состояние модального окна
+
+  const openModal = () => setModal(true); // Функция для открытия модалки
+  const closeModal = () => setModal(false);
+
   if (!isActive) return null;
 
   return (
@@ -10,10 +18,14 @@ export default function ServicesTabContent({ img, title, text, isActive }) {
       <div className="text">{text}</div>
 
       <div className="btn__wrapper">
-        <a className="custom__btn from-left accordion__tabs-btn" href="#">
+        <button
+          className="custom__btn from-left accordion__tabs-btn"
+          onClick={openModal}
+        >
           Запросить стоимость
-        </a>
+        </button>
       </div>
+      {modal && <RequestPrice closeModal={closeModal} />}
     </div>
   );
 }

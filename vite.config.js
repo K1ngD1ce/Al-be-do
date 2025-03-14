@@ -4,5 +4,5 @@ import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
   plugins: [svgr(), react()],
-  base: "/Al-be-do/",
+  // base: "/Al-be-do/",
 });
