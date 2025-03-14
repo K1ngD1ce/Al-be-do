@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://MThor.github.io/Al-be-do/",
+  "homepage": "https://K1ngD1ce.github.io/Al-be-do/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
