@@ -2,9 +2,9 @@ import { useState } from "react";
 import RequestPrice from "../../Elements/Modal/RequestPrice/RequestPrice";
 
 export default function ServicesTabContent({ img, title, text, isActive }) {
-  const [modal, setModal] = useState(false); // Состояние модального окна
+  const [modal, setModal] = useState(false);
 
-  const openModal = () => setModal(true); // Функция для открытия модалки
+  const openModal = () => setModal(true);
   const closeModal = () => setModal(false);
 
   if (!isActive) return null;

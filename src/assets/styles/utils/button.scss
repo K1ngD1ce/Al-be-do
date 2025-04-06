@@ -225,3 +225,20 @@
     width: 100%; /* При наведении линия расширяется на всю ширину */
   }
 }
+
+.checkout__btn {
+  width: 100%;
+  height: 63px;
+  color: var(--c-primary);
+  background-color: white;
+
+  &:hover:after {
+    background-color: var(--c-primary);
+    transition-delay: 0.35s;
+  }
+
+  &:hover {
+    color: white;
+    transition-delay: 0.5s;
+  }
+}

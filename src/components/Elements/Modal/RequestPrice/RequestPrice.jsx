@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import Pluse from "../../../../assets/image/svg/plus.svg?react";
+import Close from "../../../../assets/image/svg/plus.svg?react";
 import Check from "../../../../assets/image/svg/check.svg?react";
 
 export default function RequestPrice({ closeModal }) {
@@ -64,7 +64,7 @@ export default function RequestPrice({ closeModal }) {
           <div className="modal__header">
             <div className="close" onClick={handleClose}>
               <button className="close-modal">
-                <Pluse />
+                <Close />
               </button>
             </div>
           </div>
