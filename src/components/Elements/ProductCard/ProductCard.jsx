@@ -1,4 +1,13 @@
+import { useCart } from "../../../context/CartContext";
+
 export default function ProductCard({ product }) {
+  const { addToCart } = useCart();
+
+  const handleAdd = (e) => {
+    e.preventDefault();
+    addToCart(product);
+  };
+
   return (
     <div className="container">
       <div className=" card__wrapper">
@@ -17,9 +26,12 @@ export default function ProductCard({ product }) {
         </div>
 
         <div className="card__wrapper-btn">
-          <a className="custom__btn from-left productCard__btn" href="#">
+          <button
+            onClick={handleAdd}
+            className="custom__btn from-left productCard__btn"
+          >
             В корзину
-          </a>
+          </button>
         </div>
       </div>
     </div>

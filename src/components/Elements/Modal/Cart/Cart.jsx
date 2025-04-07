@@ -1,16 +1,13 @@
 import Close from "../../../../assets/image/svg/plus.svg?react";
-import Plus from "../../../../assets/image/svg/plus.svg?react";
-import Minus from "../../../../assets/image/svg/minus.svg?react";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import ProductCart from "../../ProductCart/ProductCart";
+import { useCart } from "../../../../context/CartContext";
 
 export default function Cart({ closeCart }) {
-  const [count, setCount] = useState(1);
   const cartRef = useRef(null);
   const overlayRef = useRef(null);
-
-  const increment = () => setCount((prevCount) => prevCount + 1);
-  const deccrement = () => setCount((prevCount) => prevCount - 1);
+  const { cartItems } = useCart();
 
   useEffect(() => {
     const cart = cartRef.current;
@@ -40,6 +37,11 @@ export default function Cart({ closeCart }) {
       gsap.to(overlay, { opacity: 0, duration: 0.5, ease: "power2.in" });
     };
   }, []);
+
+  const total = cartItems.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
 
   // Функция для закрытия с анимацией
   const handleClose = () => {
@@ -73,49 +75,29 @@ export default function Cart({ closeCart }) {
         <div className="content">
           <div className="cart__header">
             <h2>Корзина</h2>
-            <span className="cart__count--item">(1)</span>
+            <span className="cart__count--item">({cartItems.length})</span>
           </div>
           <div className="cart__body">
-            <div className="cart__product">
-              <div className="product__delete--icon">
-                <Close />
+            {cartItems.length === 0 ? (
+              <div className="empty-cart-message">
+                <p>
+                  Сейчас в корзине <br></br>ничего нет...
+                </p>
+                <span>
+                  посмотрите наш каталог или воспользуйтесь поиском, если ищете
+                  что-то конкретное
+                </span>
               </div>
-              <div className="product__img--wrapper">
-                <img
-                  src="/src/assets/image/products/busts/1.png"
-                  alt="Бюст А-315"
-                />
-              </div>
-
-              <div className="product__info">
-                <div className="product__descr">
-                  <span className="product__name">Бюст А-315</span>
-                  <span className="product__price">1600 руб</span>
-                </div>
-
-                <div className="product__quantity--wrapper">
-                  <button
-                    onClick={deccrement}
-                    className="product__quantity--btn minus"
-                    disabled={count === 1}
-                  >
-                    <Minus />
-                  </button>
-                  <span className="product__quantity">{count}</span>
-                  <button
-                    onClick={increment}
-                    className="product__quantity--btn plus"
-                  >
-                    <Plus />
-                  </button>
-                </div>
-              </div>
-            </div>
+            ) : (
+              cartItems.map((item) => (
+                <ProductCart key={item.id} product={item} />
+              ))
+            )}
           </div>
           <div className="cart__bottom">
             <div className="cart__bottom--subtotal">
               <span>Итого</span>
-              <span>3 800 руб</span>
+              <span>{total} руб</span>
             </div>
             <div className="cart__bottom--btn">
               <button className="custom__btn from-left checkout__btn">
