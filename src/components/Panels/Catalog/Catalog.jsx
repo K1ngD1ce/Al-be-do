@@ -88,20 +88,6 @@ export default function Catalog() {
               activeTab.products &&
               activeTab.products.length > 0 ? (
               <>
-                <Swiper
-                  ref={sliderRef}
-                  spaceBetween={32}
-                  slidesPerView={3}
-                  slidesPerGroup={3}
-                  onSlideChange={handleSlideChange}
-                >
-                  {activeTab.products.map((product) => (
-                    <SwiperSlide key={product.id}>
-                      <ProductCard product={product} />
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-
                 <div className="swiper__controller-wrapper">
                   <div className="prev-arrow" onClick={handlePrev}>
                     <Arrow width="12" height="12" />
@@ -115,9 +101,28 @@ export default function Catalog() {
                     <Arrow width="12" height="12" />
                   </div>
                 </div>
+                <Swiper
+                  ref={sliderRef}
+                  spaceBetween={32}
+                  slidesPerView={3}
+                  slidesPerGroup={3}
+                  onSlideChange={handleSlideChange}
+                >
+                  {activeTab.products.map((product) => (
+                    <SwiperSlide key={product.id}>
+                      <ProductCard product={product} />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
               </>
             ) : (
-              <div className="empty-message">Этих товаров еще нет :(</div>
+              <div className="empty-message">
+                <p>Эта коллекция пока недоступна.</p>
+                <span>
+                  Следите за обновлениями — скоро здесь появятся уникальные
+                  скульптуры
+                </span>
+              </div>
             )}
           </div>
         </div>

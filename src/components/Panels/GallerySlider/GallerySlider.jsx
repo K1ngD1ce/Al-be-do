@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Arrow from "../../../assets/image/svg/arrow-slide.svg?react";
 import Tabs from "../../Elements/Tabs/Tabs";

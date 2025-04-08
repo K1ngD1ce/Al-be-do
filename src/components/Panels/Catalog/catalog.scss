@@ -30,6 +30,23 @@
 
   .catalog__products {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+  }
+
+  .empty-message {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    p {
+      font-size: 35px;
+      line-height: 130%;
+    }
+
+    span {
+      font-size: 16px;
+      color: var(--c-gray);
+      line-height: 130%;
+    }
   }
 }
