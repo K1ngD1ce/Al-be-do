@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useState, useEffect, useCallback, useRef } from "react";
 import ProductCard from "../../Elements/productCard/ProductCard";
+import SkeletonCatalogCard from "../../Elements/Skeletons/SkeletonCatalogCards/SceletonCatalogCards";
 import Arrow from "../../../assets/image/svg/arrow-slide.svg?react";
 import Tabs from "../../Elements/Tabs/Tabs";
 
@@ -68,41 +69,55 @@ export default function Catalog() {
             />
           </div>
           <div className="catalog__products">
-            {activeTab ? (
-              activeTab.products && activeTab.products.length > 0 ? (
-                <>
-                  <Swiper
-                    ref={sliderRef}
-                    spaceBetween={32}
-                    slidesPerView={3}
-                    slidesPerGroup={3}
-                    onSlideChange={handleSlideChange}
-                  >
-                    {activeTab.products.map((product) => (
-                      <SwiperSlide key={product.id}>
-                        <ProductCard product={product} />
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                  <div className="swiper__controller-wrapper">
-                    <div className="prev-arrow" onClick={handlePrev}>
-                      <Arrow width="12" height="12" />
-                    </div>
+            {loading ? (
+              <Swiper
+                ref={sliderRef}
+                spaceBetween={32}
+                slidesPerView={3}
+                slidesPerGroup={3}
+                onSlideChange={handleSlideChange}
+              >
+                {/* Скелетоны для карточек */}
+                {[...Array(6)].map((_, index) => (
+                  <SwiperSlide key={index}>
+                    <SkeletonCatalogCard />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            ) : activeTab &&
+              activeTab.products &&
+              activeTab.products.length > 0 ? (
+              <>
+                <Swiper
+                  ref={sliderRef}
+                  spaceBetween={32}
+                  slidesPerView={3}
+                  slidesPerGroup={3}
+                  onSlideChange={handleSlideChange}
+                >
+                  {activeTab.products.map((product) => (
+                    <SwiperSlide key={product.id}>
+                      <ProductCard product={product} />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
 
-                    <span>
-                      {currentPage} из {totalPages}
-                    </span>
-
-                    <div className="next-arrow" onClick={handleNext}>
-                      <Arrow width="12" height="12" />
-                    </div>
+                <div className="swiper__controller-wrapper">
+                  <div className="prev-arrow" onClick={handlePrev}>
+                    <Arrow width="12" height="12" />
                   </div>
-                </>
-              ) : (
-                <div className="empty-message">Этих товаров еще нет :(</div>
-              )
+
+                  <span>
+                    {currentPage} из {totalPages}
+                  </span>
+
+                  <div className="next-arrow" onClick={handleNext}>
+                    <Arrow width="12" height="12" />
+                  </div>
+                </div>
+              </>
             ) : (
-              <p>Загрузка...</p>
+              <div className="empty-message">Этих товаров еще нет :(</div>
             )}
           </div>
         </div>

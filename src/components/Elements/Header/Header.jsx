@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { CartContext } from "../../../context/CartContext";
 import Cart from "../Modal/Cart/Cart";
 import SearchLogo from "../../../assets/image/svg/search.svg?react";
 import CartLogo from "../../../assets/image/svg/shopping-cart.svg?react";
@@ -8,6 +9,7 @@ import { Link } from "react-router-dom";
 export default function Header({ logo }) {
   const [scrolled, setScrolled] = useState();
   const [cart, setCart] = useState(false);
+  const { totalQuantity } = useContext(CartContext);
 
   const showCart = () => setCart(true);
   const closeCart = () => setCart(false);
@@ -85,8 +87,11 @@ export default function Header({ logo }) {
             <div className="header__right-icon">
               <SearchLogo width="24" height="24" />
             </div>
-            <div onClick={showCart} className="header__right-icon">
+            <div onClick={showCart} className="header__right-icon cart__icon">
               <CartLogo width="24" height="24" />
+              {totalQuantity > 0 && (
+                <span className="cart-badge">{totalQuantity}</span>
+              )}
             </div>
             <div className="header__right-icon">
               <LoginLogo width="24" height="24" />

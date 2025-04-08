@@ -8,6 +8,7 @@ export default function Cart({ closeCart }) {
   const cartRef = useRef(null);
   const overlayRef = useRef(null);
   const { cartItems } = useCart();
+  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   useEffect(() => {
     const cart = cartRef.current;
@@ -75,7 +76,7 @@ export default function Cart({ closeCart }) {
         <div className="content">
           <div className="cart__header">
             <h2>Корзина</h2>
-            <span className="cart__count--item">({cartItems.length})</span>
+            <span className="cart__count--item">({totalItems})</span>
           </div>
           <div className="cart__body">
             {cartItems.length === 0 ? (

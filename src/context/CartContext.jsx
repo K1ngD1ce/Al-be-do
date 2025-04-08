@@ -7,7 +7,7 @@ import {
 } from "react";
 import CartNotification from "../components/Elements/CartNotification/CartNofifiation";
 
-const CartContext = createContext();
+export const CartContext = createContext();
 
 function cartReducer(state, action) {
   switch (action.type) {

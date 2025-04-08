@@ -1,0 +1,55 @@
+.skeleton-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 376px;
+  height: 626px;
+  padding: 32px 32px 48px 32px;
+  background-color: #f0f0f0;
+  border: 1px solid var(--c-gray-light);
+
+  .skeleton-line {
+    background: linear-gradient(100deg, #e0e0e0 30%, #f0f0f0 40%, #e0e0e0 50%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  .skeleton-image {
+    height: 271px;
+    margin-bottom: 12px;
+    @extend .skeleton-line;
+  }
+
+  .skeleton-text {
+    width: 80%;
+    height: 40px;
+    @extend .skeleton-line;
+  }
+
+  .group-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .skeleton-text {
+      width: 60%;
+      height: 20px;
+    }
+  }
+
+  .skeleton-btn {
+    width: 200px;
+    height: 70px;
+    margin-top: 20px;
+    @extend .skeleton-line;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
